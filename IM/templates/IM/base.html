@@ -1,0 +1,11 @@
+<a href="{% url 'IM:index' %}">Home</a>
+<a href="{% url 'IM:announcements' %}">announcements</a>
+<a href="{% url 'IM:reservations' %}">reservations</a>
+{% if user.is_authenticated %}
+	<p>Hello,{{user.name}}</p>
+	<a href="{% url 'users:logout' %}">Log out</a>
+{% else %}
+<a href="{% url 'users:register' %}">Register</a>
+<a href="{% url 'users:login' %}">Log in</a>
+{% endif %}
+{% block content %}{% endblock content %}

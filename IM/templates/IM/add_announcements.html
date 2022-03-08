@@ -1,0 +1,10 @@
+{% extends "IM/base.html" %}
+
+{% block content %}
+
+<form action="{% url 'IM:add_announcements' %}" method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>Add Announcement</button>
+</form>
+{%endblock content %}

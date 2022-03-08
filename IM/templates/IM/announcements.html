@@ -1,0 +1,12 @@
+{% extends "IM/base.html" %}
+
+{% block content %}
+<a href="{% url 'IM:add_announcements' %}">Add Announcements</a>
+<ul>
+     {% for announcement in announcements %}
+     <li>{{ announcement }}</li>
+     {% empty %}
+    <li>No announcements have been added yet.</li>
+     {% endfor %}
+</ul>
+{% endblock content %}

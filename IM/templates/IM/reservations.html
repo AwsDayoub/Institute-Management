@@ -1,0 +1,13 @@
+{% extends "IM/base.html" %}
+
+{% block content %}
+<a href="{% url 'IM:add_reservations'%}">Add reservation</a>
+<ul>
+{% for reservation in reservations %}
+   <li> {{ reservation.name }} </li>
+    {% empty %}
+    <li> No reservations. </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
